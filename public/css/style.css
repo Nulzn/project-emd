@@ -1,0 +1,14 @@
+:root {
+    --white: #ffffff;
+    --babyWhite: #FDFFFC;
+    --mainColor: #2EC4B6;
+    --secondColor: #E71D36;
+    --lightGray: #4A5859;
+    --darkGray: #32373B; 
+  }
+
+
+body {
+    padding: 0;
+    margin: 0;
+}

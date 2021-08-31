@@ -4,7 +4,12 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from cryptography.fernet import Fernet
 
-app = Flask(__name__, template_folder="public/views")
+app = Flask(
+__name__,
+static_url_path='', 
+static_folder='public/static',
+template_folder="public/views"
+)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///SERVER.db"
 db = SQLAlchemy(app)
 
@@ -18,6 +23,7 @@ class user(db.Model):
         return "<User %r>" % self.id
 
 @app.route("/", methods=["POST", "GET"])
+
 
 def loginPage():
     if request.method == "POST":

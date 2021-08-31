@@ -1,0 +1,70 @@
+:root {
+
+    --mainFont: 'Roboto', sans-serif;
+    --mainColor: #4B6587;
+    --lightGray: #e5e5e5;
+    --darkGray: #b2b2b2;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400&display=swap');
+
+
+body {
+    font-family: 'Roboto', sans-serif !important;
+    background-color: #e5e5e5;
+    padding: 0;
+    margin: 0;
+}
+
+/* INDEX.HTML STYLE */
+.container-i h1 {
+    padding-top: 70px;
+    font-weight: 700;
+    color: var(--mainColor);
+}
+.box {
+    display: block;
+    margin: 0 auto;
+    margin-top: 60px;
+    border-radius: 25px;
+    width: 500px;
+    height: 550px;
+    background-color: var(--lightGray);
+    box-shadow: 0 3px 3px 4px var(--darkGray);
+}
+.img {
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--mainColor);
+    position: relative;
+    box-shadow: 0 3px 3px 4px var(--darkGray);
+}
+.img i {
+    font-weight: 700;
+    position: absolute;
+    top: calc(50% - 18px);
+    left: calc(50% - 15px);
+}
+.box form {
+    margin: 0 auto;
+    margin-top: 60px;
+}
+.box label {
+    color: var(--mainColor);
+}
+.sub-btn {
+    background-color: var(--mainColor);
+    margin: 0 auto;
+    margin-top: 60px;
+}
+.sub-btn:hover {
+    cursor: pointer;
+}
+.line {
+    border-top: 2px solid var(--mainColor);
+}
+.box input:focus {
+    outline: none;
+}

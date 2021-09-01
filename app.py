@@ -21,6 +21,13 @@ class user(db.Model):
     def __repr__(self):
         return "<User %r>" % self.id
 
+if user.query.filter_by(username="admin").first():
+    pass
+else:
+    admin = user(username="admin", password="123") #username: admin | password: 123
+    db.session.add(admin)
+    db.session.commit()
+
 @app.route("/", methods=["POST", "GET"])
 
 
@@ -31,7 +38,10 @@ def loginPage():
         existingUser = user.query.filter_by(username=username).first()
         if existingUser:
             if user.query.filter_by(username=username, password=password).first():
-                return redirect("/user/<username>")
+                if username == "admin":
+                    return redirect("/admin/panel")
+                else:
+                    return redirect("/user/panel")
             else:
                 return "Wrong username or password!"
         else:
@@ -40,7 +50,7 @@ def loginPage():
     else:
         return render_template("index.html")
 
-@app.route("/user/<username>/")
+@app.route("/user/panel")
 
 def userControl():
     return render_template("userlogin.html")
@@ -66,7 +76,9 @@ def userAdd():
             newUser = user(username=newUsername, password=newPassword)
             db.session.add(newUser)
             db.session.commit()
-            return redirect("/Admin/UserAdd/")
+            return redirect("/admin/panel")
+    else:
+        return render_template("userAdd.html")
 
 @app.route("/admin/userRemove/<int:id>/")
 

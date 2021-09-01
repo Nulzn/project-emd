@@ -45,7 +45,15 @@ def loginPage():
 def userControl():
     return render_template("userlogin.html")
 
-@app.route("/Admin/UserAdd/", methods=["POST", "GET"])
+@app.route("/admin/panel", methods=["POST", "GET"])
+
+def adminPanel():
+    if request.method == "POST":
+        pass
+    else:
+        return render_template("adminview.html")
+
+@app.route("/admin/userAdd/", methods=["POST", "GET"])
 
 def userAdd():
     if request.method == "POST":
@@ -60,7 +68,7 @@ def userAdd():
             db.session.commit()
             return redirect("/Admin/UserAdd/")
 
-@app.route("/Admin/UserRemove/<int:id>/")
+@app.route("/admin/userRemove/<int:id>/")
 
 def userRemove(userId):
     findUser = user.query.filter_by(id=userId).first()

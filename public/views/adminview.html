@@ -1,17 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!--HEAD META EXTRA-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!--HEAD META EXTRA-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <div class="panel-container px-4 py-10">
+        <div class="navbar flex w-full py-2 align-center">
+            <div class="logo w-1/5 self-center">
+                <h1 class="logo_title px-8 self-center">Project EMD</h1>
+            </div>
+            <div class="navbar-right w-4/5 flex align-center pl-16">
+                <div class="searchbar w-1/2 self-center pl-4 pr-32">
+                    <i class="fas fa-search pr-4 text-gray-400"></i>
+                    <input class="search-box" type="text" name="" id="" placeholder="Search Drone, Doctors, Drivers...">
+                </div>
+                <div class="user-detail flex w-1/2 pl-64">
+                    <div class="user flex align-center">
+                        <h2 class="self-center px-3 text-xl">Welcome, <span>USER HERE</span></h2>
+                        <img class="self-center px-3"
+                            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
+                            alt="">
+                        <i class="fas fa-chevron-down self-center pr-5"></i>
+                    </div>
+                    <div class="notification self-center pl-10">
+                        <i class="fas fa-bell noti">
+                            <div class="notidot"></div>
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content-admin flex w-full mt-3">
+            <div class="nav-buttons flex flex-col w-1/5 mt-12 px-8">
+                <a class="px-5 py-4 adduser text-white w-full text-center" href=""><span class="text-xl">Add New User
+                    </span><i class="pl-2 fas fa-plus plus-btn"></i></a>
+                <div class="btn flex align-center mt-20 active">
+                    <i class="fas fa-tasks self-center icon w-12 text-xl"></i>
+                    <a class="self-center text-xl w-full" href="">Dashboard</a>
+                </div>
+                <div class="btn flex align-center mt-10">
+                    <i class="fas fa-ambulance self-center icon w-12 text-xl"></i>
+                    <a class="self-center text-xl w-full" href="">Ambulance</a>
+                </div>
+                <div class="btn flex align-center mt-10 ">
+                    <i class="fas fa-user-nurse self-center icon w-12 text-xl"></i>
+                    <a class="self-center text-xl w-full" href="">Doctors</a>
+                </div>
+                <div class="btn flex align-center mt-10 ">
+                    <i class="fas fa-dove self-center icon w-12 text-xl"></i>
+                    <a class="self-center text-xl w-full" href="">Drones</a>
+                </div>
+            </div>
+
+            <div class="panel-content w-4/5 px-8 py-12">
+                <div class="items flex">
+                    <div class="item-small py-3 px-5 w-1/4 mx-4 rounded flex align-center justify-around">
+                        <div class="item-img self-center">
+                            <i class="fas fa-ambulance self-center w-12 text-xl"></i>
+                        </div>
+                        <div class="item-text ml-5 self-center">
+                            <h1 class="text-xl">368</h1>
+                            <p>Ambulance</p>
+                        </div>
+                        <button class="dots"><i class="fas fa-ellipsis-h"></i></button>
+                    </div>
+                    <div class="item-small py-3 px-5 w-1/4 mx-4 rounded flex align-center justify-around">
+                        <div class="item-img self-center">
+                            <i class="fas fa-ambulance self-center w-12 text-xl"></i>
+                        </div>
+                        <div class="item-text ml-5 self-center">
+                            <h1 class="text-xl">368</h1>
+                            <p>Ambulance</p>
+                        </div>
+                        <button class="dots"><i class="fas fa-ellipsis-h"></i></button>
+                    </div>
+                    <div class="item-small py-3 px-5 w-1/4 mx-4 rounded flex align-center justify-around">
+                        <div class="item-img self-center">
+                            <i class="fas fa-ambulance self-center w-12 text-xl"></i>
+                        </div>
+                        <div class="item-text ml-5 self-center">
+                            <h1 class="text-xl">368</h1>
+                            <p>Ambulance</p>
+                        </div>
+                        <button class="dots"><i class="fas fa-ellipsis-h"></i></button>
+                    </div>
+                    <div class="item-small py-3 px-5 w-1/4 mx-4 rounded flex align-center justify-around">
+                        <div class="item-img self-center">
+                            <i class="fas fa-ambulance self-center w-12 text-xl"></i>
+                        </div>
+                        <div class="item-text ml-5 self-center">
+                            <h1 class="text-xl">368</h1>
+                            <p>Ambulance</p>
+                        </div>
+                        <button class="dots"><i class="fas fa-ellipsis-h"></i></button>
+                    </div>
+                </div>
+                <div class="items flex mt-10">
+                    <div class="item-big w-3/4 mx-5 rounded flex">
+                        <div class="mapouter">
+                            <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas"
+                                    src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                                    href="https://123movies-to.org">123movies</a><br>
+                            </div>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="item-small py-3 px-5 w-1/4 mx-4 rounded flex align-center justify-around">
+                        <div class="item-img self-center">
+                            <i class="fas fa-ambulance self-center w-12 text-xl"></i>
+                        </div>
+                        <div class="item-text ml-5 self-center">
+                            <h1 class="text-xl">368</h1>
+                            <p>Ambulance</p>
+                        </div>
+                        <button class="dots"><i class="fas fa-ellipsis-h"></i></button>
+                    </div>
+                </div>
+                <div class="items flex"></div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

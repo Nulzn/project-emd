@@ -18,23 +18,29 @@
 
 <body>
     <div class="container-i">
-        <h1 class="text-center text-4xl">ACCOUNT LOGIN</h1>
-        <div class="box p-7">
-            <div class="img mt-5">
-                <i class="fab fa-teamspeak text-3xl text-white"></i>
-
-
+        <div class="wave svg-image">
+            <div class="flex w-full mt-64 flex-1">
+                <div class="i-left w-1/2 lg:px-24 md:px-12">
+                    <h1 class="">PROJECT <br>EMD</h1>
+                    <p class="text-white italic px-2 text-xl">Drones for medical assistance</p>
+                </div>
+                <div class="i-right w-1/2 px-32">
+                    <div class="box-i rounded p-4">
+                        <h2 class=" text-2xl">SIGN IN</h2>
+                        <form class="mt-5 flex flex-col" action="/" method="POST">
+                            <div class="input-div-i flex rounded align-center px-2 py-1">
+                                <i class="fas fa-user text-2xl align-center self-center px-2"></i>
+                                <input class="align-center self-center text-xl py-2 px-3" type="text" name="loginUsername" id="username" placeholder="Username">
+                            </div>
+                            <div class="input-div-i mt-4 flex rounded align-center px-2 py-1">
+                                <i class="fas fa-lock text-2xl align-center self-center px-2"></i>
+                                <input class="align-center self-center text-xl py-2 px-3" type="password" name="loginPassword" id="username" placeholder="Password">
+                            </div>
+                            <input class="w-full mt-6 i-submit py-2 text-2xl text-white rounded"type="submit" value="LOGIN">
+                        </form>
+                    </div>
+                </div>
             </div>
-            <h3 class="text-center pt-3 text-2xl">Login</h3>
-            <form class="block w-2/3" action="/" method="POST">
-                <label class="block italic text-xl pt-2 pb-1" for="">Username</label>
-                <div class="line"></div>
-                <input class="w-full rounded py-1 px-2" type="text" name="loginUsername" id="loginUsername">
-                <label class="block italic text-xl pt-2 pb-1" for="">Password</label>
-                <div class="line"></div>
-                <input class="w-full rounded py-1 px-2" type="password" name="loginPassword" id="loginPassword">
-                <input class="block sub-btn text-2xl py-2 px-7 rounded-xl text-white" type="submit" value="Login">
-            </form>
         </div>
     </div>
 </body>

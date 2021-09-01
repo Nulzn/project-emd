@@ -1,9 +1,10 @@
 :root {
 
     --mainFont: 'Roboto', sans-serif;
-    --mainColor: #4B6587;
-    --lightGray: #e5e5e5;
-    --darkGray: #b2b2b2;
+    --bgColor: #CBCDCB;
+    --mainRed: #C44B4F;
+    --mainBlue: #607D86;
+    --metalGray: #4C5355;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400&display=swap');
@@ -17,54 +18,55 @@ body {
 }
 
 /* INDEX.HTML STYLE */
-.container-i h1 {
-    padding-top: 70px;
-    font-weight: 700;
-    color: var(--mainColor);
+.container-i {
+    max-height: 100vh !important;
+    overflow-y: hidden;
 }
-.box {
+.svg-image {
+    background-image: url('/img/wave.svg');
+}
+.wave {
+    aspect-ratio: 900/600;
+    width: 100%;
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    margin: 0 auto;
+}
+.i-left h1 {
+    font-weight: 700;
+    color: white;
+    font-size: 100px;
+}
+.box-i {
+    width: 400px;
+    height: 500px;
+    /*background-color: #f2f3f2;*/
     display: block;
     margin: 0 auto;
-    margin-top: 60px;
-    border-radius: 25px;
-    width: 500px;
-    height: 550px;
-    background-color: var(--lightGray);
-    box-shadow: 0 3px 3px 4px var(--darkGray);
+    margin-top: 40px;
 }
-.img {
-    margin: 0 auto;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: var(--mainColor);
-    position: relative;
-    box-shadow: 0 3px 3px 4px var(--darkGray);
-}
-.img i {
+.box-i h2 {
+    color: var(--metalGray);
     font-weight: 700;
-    position: absolute;
-    top: calc(50% - 18px);
-    left: calc(50% - 15px);
 }
-.box form {
-    margin: 0 auto;
-    margin-top: 60px;
+.input-div-i i{
+    color: var(--mainBlue);
 }
-.box label {
-    color: var(--mainColor);
-}
-.sub-btn {
-    background-color: var(--mainColor);
-    margin: 0 auto;
-    margin-top: 60px;
-}
-.sub-btn:hover {
-    cursor: pointer;
-}
-.line {
-    border-top: 2px solid var(--mainColor);
-}
-.box input:focus {
+.input-div-i input:focus {
     outline: none;
+}
+.input-div-i input {
+    background-color: transparent;
+}
+.input-div-i input::placeholder {
+    color: var(--mainBlue);
+}
+.input-div-i {
+    background-color: #f2f3f2;
+}
+.i-submit {
+    background-color: var(--mainBlue);
 }

@@ -197,6 +197,10 @@ body {
     top: 19px;
     left: 18px;
 }
+.doc {
+    left: 21px !important;
+    top: 17px !important;
+}
 .item-text h1 {
     font-weight: 700;
 }
@@ -206,14 +210,28 @@ body {
 }
 .gmap_canvas {
     overflow: hidden;
-    border-radius: .25rem .25rem .25rem .25rem;
     background: none !important;
     height: 500px;
     width: 600px;
+    border-right: 4px solid #ff416c;
 }
 .mapouter {
     position: relative;
     text-align: right;
     height: 500px;
     width: 600px;
+}
+.item-medium {
+    position: relative;
+    background-color: var(--bgPop);
+    height: 500px;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+.item-medium span {
+    color: #ff416c;
+}
+.doc img {
+    width: 64px;
+    height: 64px;
 }

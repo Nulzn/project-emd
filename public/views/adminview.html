@@ -45,23 +45,28 @@
         </div>
         <div class="main-content-admin flex w-full mt-3">
             <div class="nav-buttons flex flex-col w-1/5 mt-12 px-8">
-                <a class="px-5 py-4 adduser text-white w-full text-center" href="/admin/userAdd/"><span class="text-xl">Add New User
+                <a class="px-5 py-4 adduser text-white w-full text-center" href="/admin/userAdd/"><span
+                        class="text-xl">Add New User
                     </span><i class="pl-2 fas fa-plus plus-btn"></i></a>
                 <div class="btn flex align-center mt-20 active">
                     <i class="fas fa-tasks self-center icon w-12 text-xl"></i>
                     <a class="self-center text-xl w-full" href="">Dashboard</a>
                 </div>
-                <div class="btn flex align-center mt-10">
+                <div class="btn flex align-center mt-12">
                     <i class="fas fa-ambulance self-center icon w-12 text-xl"></i>
                     <a class="self-center text-xl w-full" href="">Ambulance</a>
                 </div>
-                <div class="btn flex align-center mt-10 ">
+                <div class="btn flex align-center mt-12 ">
                     <i class="fas fa-user-nurse self-center icon w-12 text-xl"></i>
                     <a class="self-center text-xl w-full" href="">Doctors</a>
                 </div>
-                <div class="btn flex align-center mt-10 ">
+                <div class="btn flex align-center mt-12 ">
                     <i class="fas fa-dove self-center icon w-12 text-xl"></i>
                     <a class="self-center text-xl w-full" href="">Drones</a>
+                </div>
+                <div class="btn flex align-center mt-12 ">
+                    <i class="fas fa-first-aid self-center icon w-12 text-xl"></i>
+                    <a class="self-center text-xl w-full" href="">Supplies</a>
                 </div>
             </div>
 
@@ -79,31 +84,31 @@
                     </div>
                     <div class="item-small py-3 px-5 w-1/4 mx-4 rounded flex align-center justify-around">
                         <div class="item-img self-center">
-                            <i class="fas fa-ambulance self-center w-12 text-xl"></i>
+                            <i class="fas fa-user-nurse self-center w-12 text-xl doc"></i>
                         </div>
                         <div class="item-text ml-5 self-center">
                             <h1 class="text-xl">368</h1>
-                            <p>Ambulance</p>
+                            <p>Doctors</p>
                         </div>
                         <button class="dots"><i class="fas fa-ellipsis-h"></i></button>
                     </div>
                     <div class="item-small py-3 px-5 w-1/4 mx-4 rounded flex align-center justify-around">
                         <div class="item-img self-center">
-                            <i class="fas fa-ambulance self-center w-12 text-xl"></i>
+                            <i class="fas fa-dove self-center w-12 text-xl"></i>
                         </div>
                         <div class="item-text ml-5 self-center">
                             <h1 class="text-xl">368</h1>
-                            <p>Ambulance</p>
+                            <p>Drones</p>
                         </div>
                         <button class="dots"><i class="fas fa-ellipsis-h"></i></button>
                     </div>
                     <div class="item-small py-3 px-5 w-1/4 mx-4 rounded flex align-center justify-around">
                         <div class="item-img self-center">
-                            <i class="fas fa-ambulance self-center w-12 text-xl"></i>
+                            <i class="fas fa-first-aid self-center w-12 text-xl"></i>
                         </div>
                         <div class="item-text ml-5 self-center">
                             <h1 class="text-xl">368</h1>
-                            <p>Ambulance</p>
+                            <p>Supplies</p>
                         </div>
                         <button class="dots"><i class="fas fa-ellipsis-h"></i></button>
                     </div>
@@ -119,15 +124,61 @@
                         </div>
                         <div class="right"></div>
                     </div>
-                    <div class="item-small py-3 px-5 w-1/4 mx-4 rounded flex align-center justify-around">
-                        <div class="item-img self-center">
-                            <i class="fas fa-ambulance self-center w-12 text-xl"></i>
-                        </div>
-                        <div class="item-text ml-5 self-center">
-                            <h1 class="text-xl">368</h1>
-                            <p>Ambulance</p>
-                        </div>
+                    <div class="item-medium py-10 px-8 w-1/4 mx-4 rounded">
+                        <h1 class="text-xl text-left">Active <span>Doctors</span></h1>
                         <button class="dots"><i class="fas fa-ellipsis-h"></i></button>
+                        <div class="doc-list justify-center align-center">
+                            <div class="doc flex justify-center align-center justify-between mt-8">
+                                <div class="doc-img">
+                                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
+                                        alt="">
+                                </div>
+                                <div class="doc-details">
+                                    <h1 class="text-xl">Robert Will</h1>
+                                    <p>22 Years Old</p>
+                                </div>
+                            </div>
+                            <div class="doc flex justify-center align-center justify-between mt-8">
+                                <div class="doc-img">
+                                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
+                                        alt="">
+                                </div>
+                                <div class="doc-details">
+                                    <h1 class="text-xl">Robert Will</h1>
+                                    <p>22 Years Old</p>
+                                </div>
+                            </div>
+                            <div class="doc flex justify-center align-center justify-between mt-8">
+                                <div class="doc-img">
+                                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
+                                        alt="">
+                                </div>
+                                <div class="doc-details">
+                                    <h1 class="text-xl">Robert Will</h1>
+                                    <p>22 Years Old</p>
+                                </div>
+                            </div>
+                            <div class="doc flex justify-center align-center justify-between mt-8">
+                                <div class="doc-img">
+                                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
+                                        alt="">
+                                </div>
+                                <div class="doc-details">
+                                    <h1 class="text-xl">Robert Will</h1>
+                                    <p>22 Years Old</p>
+                                </div>
+                            </div>
+                            <div class="doc flex justify-center align-center justify-between mt-8">
+                                <div class="doc-img">
+                                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="">
+                                </div>
+                                <div class="doc-details">
+                                    <h1 class="text-xl">Robert Will</h1>
+                                    <p>22 Years Old</p>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
                 <div class="items flex"></div>

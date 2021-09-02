@@ -2,6 +2,7 @@ from logging import debug
 from flask import Flask, render_template, redirect, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import sqlite3
 
 app = Flask(
 __name__,
@@ -9,13 +10,15 @@ static_url_path='',
 static_folder='public/static',
 template_folder="public/views"
 )
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///SERVER.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users.db"
 db = SQLAlchemy(app)
 
 class user(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(200), nullable=False)
     password = db.Column(db.String(200), nullable=False)
+    first_second_name = db.Column(db.String(200), nullable=False)
+    age = db.Column(db.String(3), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
@@ -24,7 +27,7 @@ class user(db.Model):
 if user.query.filter_by(username="admin").first():
     pass
 else:
-    admin = user(username="admin", password="123") #username: admin | password: 123
+    admin = user(username="admin", password="123", first_second_name="Administrator", age="Unknown") #username: admin | password: 123
     db.session.add(admin)
     db.session.commit()
 
@@ -33,13 +36,13 @@ else:
 
 def loginPage():
     if request.method == "POST":
-        username = request.form["loginUsername"]
-        password = request.form["loginPassword"]
-        existingUser = user.query.filter_by(username=username).first()
+        usernameLogin = request.form["loginUsername"]
+        passwordLogin = request.form["loginPassword"]
+        existingUser = user.query.filter_by(username=usernameLogin).first()
         if existingUser:
-            if user.query.filter_by(username=username, password=password).first():
-                if username == "admin":
-                    return redirect("/admin/panel")
+            if user.query.filter_by(username=usernameLogin, password=passwordLogin).first():
+                if usernameLogin == "admin":
+                    return redirect(url_for(".adminPanel", username=usernameLogin))
                 else:
                     return redirect("/user/panel")
             else:
@@ -61,7 +64,9 @@ def adminPanel():
     if request.method == "POST":
         pass
     else:
-        return render_template("adminview.html")
+        usernameReq = request.args["username"]
+        doctors = user.query.order_by(user.date_created).all()
+        return render_template("adminview.html", doctors=doctors, username=usernameReq)
 
 @app.route("/admin/userAdd/", methods=["POST", "GET"])
 
@@ -69,11 +74,13 @@ def userAdd():
     if request.method == "POST":
         newUsername = request.form["newUsername"] # Name and id in userAdd form should be "newUsername".
         newPassword = request.form["newPassword"] # Name and id in userAdd form should be "newPassword".
+        first_second_name = request.form["firstAndSecondName"] # Name and id in userAdd form should be "firstAndSecondName".
+        age = request.form["age"] # Name and id in userAdd form should be "age".
 
         if user.query.filter_by(username=newUsername).first():
             return "User already has that username!"
         else:
-            newUser = user(username=newUsername, password=newPassword)
+            newUser = user(username=newUsername, password=newPassword, first_second_name=first_second_name, age=age)
             db.session.add(newUser)
             db.session.commit()
             return redirect("/admin/panel")

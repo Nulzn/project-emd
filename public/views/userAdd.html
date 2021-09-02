@@ -7,12 +7,19 @@
     <title>Add User</title>
 </head>
 <body>
+    {% block body %}
+    {% for user in users %}
+        <h1>{{user.username}}</h1>
+    {% endfor %}
     <div class="">
         <form action="/admin/userAdd/" method="POST">
             <input type="text" name="newUsername" id="newUsername" placeholder="New Username">
             <input type="password" name="newPassword" id="newPassword" placeholder="New Password">
+            <input type="text" name="firstAndSecondName" id="firstAndSecondName" placeholder="First and Second Name">
+            <input type="text" name="age" id="age" placeholder="Age">
             <input type="submit" value="Continue">
         </form>
     </div>
+    {% endblock %}
 </body>
 </html>

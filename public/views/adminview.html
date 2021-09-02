@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    {% block body %}
     <div class="panel-container px-4 py-10">
         <div class="navbar flex w-full py-2 align-center">
             <div class="logo w-1/5 self-center">
@@ -29,7 +30,7 @@
                 </div>
                 <div class="user-detail flex w-1/2 pl-64">
                     <div class="user flex align-center">
-                        <h2 class="self-center px-3 text-xl">Welcome, <span>USER HERE</span></h2>
+                        <h2 class="self-center px-3 text-xl">Welcome, <span>{{username}}</span></h2>
                         <img class="self-center px-3"
                             src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
                             alt="">
@@ -128,17 +129,19 @@
                         <h1 class="text-xl text-left">Active <span>Doctors</span></h1>
                         <button class="dots"><i class="fas fa-ellipsis-h"></i></button>
                         <div class="doc-list justify-center align-center">
+                            {% for doctor in doctors %}
                             <div class="doc flex justify-center align-center justify-between mt-8">
                                 <div class="doc-img">
                                     <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
                                         alt="">
                                 </div>
                                 <div class="doc-details">
-                                    <h1 class="text-xl">Robert Will</h1>
-                                    <p>22 Years Old</p>
+                                    <h1 class="text-xl">{{doctor.first_second_name}}</h1>
+                                    <p>Age: {{doctor.age}}</p>
                                 </div>
                             </div>
-                            <div class="doc flex justify-center align-center justify-between mt-8">
+                            {% endfor %}
+                            <!--<div class="doc flex justify-center align-center justify-between mt-8">
                                 <div class="doc-img">
                                     <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
                                         alt="">
@@ -176,7 +179,7 @@
                                     <h1 class="text-xl">Robert Will</h1>
                                     <p>22 Years Old</p>
                                 </div>
-                            </div>
+                            </div>-->
 
                         </div>
                     </div>
@@ -185,6 +188,7 @@
             </div>
         </div>
     </div>
+    {% endblock %}
 </body>
 
 </html>

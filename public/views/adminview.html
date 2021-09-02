@@ -138,6 +138,11 @@
                                 <div class="doc-details">
                                     <h1 class="text-xl">{{doctor.first_second_name}}</h1>
                                     <p>Age: {{doctor.age}}</p>
+                                    {% if doctor.username != "admin" %}
+                                        <a href="/admin/{{doctor.id}}">Remove</a>
+                                    {% else %}
+                                        <a>Can't Remove Admin</a>
+                                    {% endif %}
                                 </div>
                             </div>
                             {% endfor %}

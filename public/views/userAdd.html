@@ -7,10 +7,6 @@
     <title>Add User</title>
 </head>
 <body>
-    {% block body %}
-    {% for user in users %}
-        <h1>{{user.username}}</h1>
-    {% endfor %}
     <div class="">
         <form action="/admin/userAdd/" method="POST">
             <input type="text" name="newUsername" id="newUsername" placeholder="New Username">
@@ -20,6 +16,5 @@
             <input type="submit" value="Continue">
         </form>
     </div>
-    {% endblock %}
 </body>
 </html>

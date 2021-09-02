@@ -2,7 +2,6 @@ from logging import debug
 from flask import Flask, render_template, redirect, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-import sqlite3
 
 app = Flask(
 __name__,
@@ -64,9 +63,12 @@ def adminPanel():
     if request.method == "POST":
         pass
     else:
-        usernameReq = request.args["username"]
         doctors = user.query.order_by(user.date_created).all()
-        return render_template("adminview.html", doctors=doctors, username=usernameReq)
+        try:
+            usernameReq = request.args["username"]
+            return render_template("adminview.html", doctors=doctors, username=usernameReq)
+        except:
+            return render_template("adminview.html", doctors=doctors)
 
 @app.route("/admin/userAdd/", methods=["POST", "GET"])
 
@@ -76,6 +78,7 @@ def userAdd():
         newPassword = request.form["newPassword"] # Name and id in userAdd form should be "newPassword".
         first_second_name = request.form["firstAndSecondName"] # Name and id in userAdd form should be "firstAndSecondName".
         age = request.form["age"] # Name and id in userAdd form should be "age".
+        print(f"{newUsername} {newPassword}")
 
         if user.query.filter_by(username=newUsername).first():
             return "User already has that username!"
@@ -87,14 +90,14 @@ def userAdd():
     else:
         return render_template("userAdd.html")
 
-@app.route("/admin/userRemove/<int:id>/")
+@app.route("/admin/<int:id>") # Doesn't work. Needs to be fixed!
 
-def userRemove(userId):
-    findUser = user.query.filter_by(id=userId).first()
+def userRemove(id):
+    findUser = user.query.get_or_404(id)
     if findUser:
         db.session.delete(findUser)
         db.session.commit()
-        return redirect("/Admin/UserRemove/")
+        return redirect("/admin/panel")
     else:
         print("User does not exist!")
         

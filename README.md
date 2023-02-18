@@ -1,10 +1,9 @@
 # Project - EMD
 
-- School project made by @Nulzn and @L00ting (FelixDev)
+- Project made by @Nulzn and @L00ting (FelixDev)
 
-- This project is not open to the public, and only @Nulzn and @L00ting have authorization to download it.
+- This project is open to the public.
 
-- ^^ (Later on, the project can be made public for others to download. If it becomes public, we'll let you know!)
 ## Installation
 
 ```bash
